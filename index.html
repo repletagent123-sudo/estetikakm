@@ -1,56 +1,763 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estética Pro - Clínica de Estética Automotiva</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); }
+    .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+    .gold-accent { color: #d4af37; }
+    .gold-bg { background-color: #d4af37; }
+    .gold-border { border-color: #d4af37; }
+    .shimmer { position: relative; overflow: hidden; }
+    .shimmer::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+    .fade-in { animation: fadeIn 0.6s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .pulse-glow { animation: pulseGlow 2s infinite; }
+    @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); } 50% { box-shadow: 0 0 20px 10px rgba(212,175,55,0); } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
 
-const services = [
-  { id: 1, name: 'Botox Full Face', price: 'R$ 890,00', stock: 10 },
-  { id: 2, name: 'Preenchimento Labial', price: 'R$ 1.200,00', stock: 5 },
-  { id: 3, name: 'Plano Mensal VIP', price: 'R$ 299,00/mês', stock: 99 },
-];
-
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-50 p-6">
-      <h1 className="text-3xl font-bold text-center text-pink-600 mb-10">
-        Clínica Estética Pro
-      </h1>
-
-      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-        {services.map((s) => (
-          <div 
-            key={s.id} 
-            className="bg-white p-6 rounded-2xl shadow-xl border-t-4 border-pink-500 flex flex-col"
-          >
-            <h2 className="text-xl font-semibold text-gray-800">{s.name}</h2>
-            <p className="text-2xl font-bold my-4 text-pink-600">{s.price}</p>
-            <p className="text-sm text-gray-500 mb-6">
-              Disponibilidade: {s.stock} {s.stock === 1 ? 'sessão' : 'sessões'}
-            </p>
-            <button className="mt-auto w-full bg-pink-600 text-white py-3 rounded-xl font-bold hover:bg-pink-700 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
-              Assinar Agora
-            </button>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-40 glass border-b border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 gold-bg rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-        ))}
+          <span class="text-xl font-bold text-slate-900">Estética <span class="gold-accent">Pro</span></span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#planos" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Planos</a>
+          <a href="#servicos" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Serviços</a>
+          <a href="#agendamento" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Agendar</a>
+          <button onclick="toggleAdmin()" class="text-sm font-medium text-slate-500 hover:text-slate-700 transition flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Painel Interno
+          </button>
+        </div>
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-200/50">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#planos" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100">Planos</a>
+        <a href="#servicos" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100">Serviços</a>
+        <a href="#agendamento" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100">Agendar</a>
+        <button onclick="toggleAdmin()" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-500 hover:bg-slate-100">Painel Interno</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-gold-400 rounded-full blur-3xl" style="background:#d4af37;"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-gold-300 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Estética Automotiva de Alto Padrão
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Seu veículo merece o <br><span class="gold-accent">melhor cuidado</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+        Procedimentos premium com produtos de alta performance. Resultado profissional com garantia de satisfação.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#agendamento" class="gold-bg text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition shimmer">
+          Agendar Agora
+        </a>
+        <a href="#planos" class="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">
+          Ver Planos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="planos" class="py-20 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Planos de Assinatura</h2>
+        <p class="text-slate-500">Economize com nossos planos recorrentes e mantenha seu veículo sempre impecável</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Plano Mensal -->
+        <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 card-hover">
+          <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Plano Mensal</div>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-5xl font-bold text-slate-900">R$ 70,00</span>
+            <span class="text-slate-500">/mês</span>
+          </div>
+          <p class="text-slate-600 mb-6">Ideal para quem quer começar sem compromisso longo</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-slate-700">
+              <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 Lavagem Detalhada por mês
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-700">
+              <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Aplicação de Cera Carnaúba
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-700">
+              <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Atendimento prioritário
+            </li>
+          </ul>
+          <button onclick="openPlanWhatsApp('Mensal', 70)" class="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition">
+            Assinar Plano Mensal
+          </button>
+        </div>
+        <!-- Plano Anual -->
+        <div class="bg-slate-900 rounded-2xl p-8 border-2 gold-border card-hover relative overflow-hidden">
+          <div class="absolute top-4 right-4 gold-bg text-slate-900 text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</div>
+          <div class="text-sm font-semibold gold-accent uppercase tracking-wider mb-2">Plano Anual</div>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-5xl font-bold text-white">R$ 58,33</span>
+            <span class="text-slate-400">/mês</span>
+          </div>
+          <div class="text-slate-400 text-sm mb-4">Total de R$ 700,00 à vista</div>
+          <div class="bg-emerald-500/20 text-emerald-400 text-sm font-semibold px-3 py-2 rounded-lg inline-block mb-6">
+            💰 Economia de R$ 140,00/ano vs plano mensal
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 Lavagem Detalhada por mês
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Aplicação de Cera Carnaúba Premium
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Atendimento VIP sem fila
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300">
+              <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 Higienização Interna grátis
+            </li>
+          </ul>
+          <button onclick="openPlanWhatsApp('Anual', 700)" class="w-full py-3 rounded-xl gold-bg text-slate-900 font-bold hover:brightness-110 transition shimmer">
+            Assinar Plano Anual
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-20 px-4 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Nossos Procedimentos</h2>
+        <p class="text-slate-500">Tecnologia de ponta para o melhor resultado do mercado</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Serviço 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&h=400&fit=crop" alt="Lavagem Detalhada" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Lavagem Detalhada + Cera Carnaúba</h3>
+            <p class="text-sm text-slate-500 mb-4">Limpeza profunda de todas as superfícies com proteção em cera natural de alta durabilidade</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold gold-accent">R$ 120,00</span>
+              <button onclick="preSelectService('Lavagem Detalhada + Cera Carnaúba')" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition">
+                Agendar
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Serviço 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop" alt="Higienização Interna" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Higienização Interna Completa</h3>
+            <p class="text-sm text-slate-500 mb-4">Limpeza e sanitização de estofados, carpetes, painel e ar-condicionado</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold gold-accent">R$ 250,00</span>
+              <button onclick="preSelectService('Higienização Interna Completa')" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition">
+                Agendar
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Serviço 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop" alt="Polimento Técnico" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Polimento Técnico + Vitrificação</h3>
+            <p class="text-sm text-slate-500 mb-4">Correção de pintura em múltiplas etapas com proteção cerâmica de até 5 anos</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold gold-accent">R$ 800,00</span>
+              <button onclick="preSelectService('Polimento Técnico + Vitrificação')" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition">
+                Agendar
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Serviço 4 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=400&fit=crop" alt="Revitalização" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Revitalização de Plásticos e Faróis</h3>
+            <p class="text-sm text-slate-500 mb-4">Recuperação de peças plásticas desbotadas e faróis amarelados com proteção UV</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold gold-accent">R$ 150,00</span>
+              <button onclick="preSelectService('Revitalização de Plásticos e Faróis')" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition">
+                Agendar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agendamento -->
+  <section id="agendamento" class="py-20 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Agende seu Horário</h2>
+        <p class="text-slate-500">Preencha os dados abaixo e envie diretamente pelo WhatsApp</p>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-200">
+        <form id="agendamentoForm" onsubmit="handleAgendamento(event)">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Nome Completo</label>
+              <input type="text" id="nome" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition" placeholder="Seu nome">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Telefone</label>
+              <input type="tel" id="telefone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition" placeholder="(11) 99999-9999">
+            </div>
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Veículo / Modelo</label>
+            <input type="text" id="veiculo" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition" placeholder="Ex: Honda Civic 2020">
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Procedimento Desejado</label>
+            <select id="procedimento" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition bg-white">
+              <option value="">Selecione um serviço</option>
+              <option value="Lavagem Detalhada + Cera Carnaúba">Lavagem Detalhada + Cera Carnaúba — R$ 120,00</option>
+              <option value="Higienização Interna Completa">Higienização Interna Completa — R$ 250,00</option>
+              <option value="Polimento Técnico + Vitrificação">Polimento Técnico + Vitrificação — R$ 800,00</option>
+              <option value="Revitalização de Plásticos e Faróis">Revitalização de Plásticos e Faróis — R$ 150,00</option>
+            </select>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Data</label>
+              <input type="date" id="data" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition">
+              <p id="dataErro" class="text-red-500 text-xs mt-1 hidden">❌ Domingos não são permitidos. Escolha Seg-Sáb.</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Horário</label>
+              <select id="hora" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition bg-white">
+                <option value="">Selecione</option>
+              </select>
+              <p id="horaErro" class="text-red-500 text-xs mt-1 hidden">❌ Horário fora do expediente (08:00-18:00).</p>
+            </div>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl gold-bg text-slate-900 font-bold text-lg hover:brightness-110 transition shimmer flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Finalizar e Agendar via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <div class="w-8 h-8 gold-bg rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <span class="text-xl font-bold text-white">Estética <span class="gold-accent">Pro</span></span>
+      </div>
+      <p class="mb-2">Estética Automotiva de Alto Padrão</p>
+      <p class="text-sm mb-6">Dúvidas? <a href="mailto:flaviojorrge@gmail.com" class="gold-accent hover:underline">flaviojorrge@gmail.com</a></p>
+      <div class="border-t border-slate-800 pt-6 text-sm">
+        © 2026 Estética Pro. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/5511953429077" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 pulse-glow" aria-label="WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Painel Admin (Overlay) -->
+  <div id="adminPanel" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleAdmin()"></div>
+    <div class="absolute inset-x-4 top-20 bottom-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[900px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col fade-in">
+      <!-- Header Admin -->
+      <div class="bg-slate-900 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <h2 class="text-lg font-bold text-white">Painel Interno — <span class="gold-accent">Estética Pro</span></h2>
+        </div>
+        <button onclick="toggleAdmin()" class="text-slate-400 hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      
+      <!-- Tabs -->
+      <div class="flex border-b border-slate-200">
+        <button onclick="switchTab('agendamentos')" id="tab-agendamentos" class="flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-gold-500 bg-gold-50">Agendamentos</button>
+        <button onclick="switchTab('estoque')" id="tab-estoque" class="flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700">Controle de Estoque</button>
       </div>
 
-      <footer className="text-center mt-12 text-gray-400 text-sm">
-        <p>Dúvidas? Fale conosco: <a href="mailto:flaviojorrge@gmail.com" className="underline hover:text-pink-600 transition-colors">flaviojorrge@gmail.com</a></p>
-      </footer>
+      <!-- Content -->
+      <div class="flex-1 overflow-auto p-6">
+        <!-- Agendamentos Tab -->
+        <div id="content-agendamentos">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-slate-900">Agendamentos Realizados</h3>
+            <span id="countAgendamentos" class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">0 registros</span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 text-slate-700 font-semibold">
+                <tr>
+                  <th class="px-4 py-3 text-left">Data/Hora</th>
+                  <th class="px-4 py-3 text-left">Cliente</th>
+                  <th class="px-4 py-3 text-left">Veículo</th>
+                  <th class="px-4 py-3 text-left">Serviço</th>
+                  <th class="px-4 py-3 text-left">Telefone</th>
+                  <th class="px-4 py-3 text-center">Ação</th>
+                </tr>
+              </thead>
+              <tbody id="tabelaAgendamentos" class="divide-y divide-slate-200">
+                <tr><td colspan="6" class="px-4 py-8 text-center text-slate-400">Nenhum agendamento registrado</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <button onclick="clearAgendamentos()" class="mt-4 text-sm text-red-500 hover:text-red-700 font-medium flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            Limpar todos os agendamentos
+          </button>
+        </div>
 
-      <a 
-        href="https://wa.me/5511953429077" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        aria-label="Contato via WhatsApp"
-        className="fixed bottom-8 right-8 bg-green-500 p-4 rounded-full shadow-2xl text-white text-2xl z-50 hover:scale-110 hover:bg-green-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
-      >
-        💬
-      </a>
-    </main>
-  );
-}
-<div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-pink-500">
-  <img src="/botox.jpg" alt="Botox Full Face" className="w-full h-48 object-cover" />
-  <div className="p-6">
-    <h2 className="text-xl font-semibold">Botox Full Face</h2>
-    ...
+        <!-- Estoque Tab -->
+        <div id="content-estoque" class="hidden">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-slate-900">Controle de Estoque</h3>
+            <button onclick="openAddProduct()" class="px-4 py-2 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Novo Produto
+            </button>
+          </div>
+          
+          <!-- Add Product Form -->
+          <div id="addProductForm" class="hidden mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <input type="text" id="produtoNome" placeholder="Nome do produto" class="px-3 py-2 rounded-lg border border-slate-300 focus:border-gold-500 outline-none">
+              <input type="number" id="produtoQtd" placeholder="Quantidade" class="px-3 py-2 rounded-lg border border-slate-300 focus:border-gold-500 outline-none">
+              <select id="produtoStatus" class="px-3 py-2 rounded-lg border border-slate-300 focus:border-gold-500 outline-none bg-white">
+                <option value="Disponível">Disponível</option>
+                <option value="Alerta de Reposição">Alerta de Reposição</option>
+              </select>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="addProduct()" class="px-4 py-2 gold-bg text-slate-900 font-semibold rounded-lg hover:brightness-110 transition text-sm">Salvar Produto</button>
+              <button onclick="closeAddProduct()" class="px-4 py-2 bg-slate-200 text-slate-700 font-semibold rounded-lg hover:bg-slate-300 transition text-sm">Cancelar</button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 text-slate-700 font-semibold">
+                <tr>
+                  <th class="px-4 py-3 text-left">Produto</th>
+                  <th class="px-4 py-3 text-center">Quantidade</th>
+                  <th class="px-4 py-3 text-center">Status</th>
+                  <th class="px-4 py-3 text-center">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabelaEstoque" class="divide-y divide-slate-200">
+                <tr><td colspan="4" class="px-4 py-8 text-center text-slate-400">Nenhum produto cadastrado</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-24 right-4 z-50 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl transform translate-x-full transition-transform duration-300 flex items-center gap-3">
+    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toastMsg">Operação realizada com sucesso!</span>
+  </div>
+
+  <script>
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      initHorarios();
+      initDateValidation();
+      renderAgendamentos();
+      renderEstoque();
+      initDefaultStock();
+    });
+
+    // ========== MOBILE MENU ==========
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // ========== HORÁRIOS COMERCIAIS (08:00-18:00) ==========
+    function initHorarios() {
+      const select = document.getElementById('hora');
+      const horarios = [];
+      for (let h = 8; h <= 18; h++) {
+        const hora = h.toString().padStart(2, '0');
+        horarios.push(`${hora}:00`);
+        if (h !== 18) horarios.push(`${hora}:30`);
+      }
+      horarios.forEach(h => {
+        const opt = document.createElement('option');
+        opt.value = h;
+        opt.textContent = h;
+        select.appendChild(opt);
+      });
+    }
+
+    // ========== VALIDAÇÃO DE DATA (Bloquear Domingos) ==========
+    function initDateValidation() {
+      const input = document.getElementById('data');
+      const hoje = new Date();
+      const amanha = new Date(hoje);
+      amanha.setDate(amanha.getDate() + 1);
+      
+      // Min = amanhã, Max = 60 dias
+      input.min = formatDateISO(amanha);
+      const maxDate = new Date(hoje);
+      maxDate.setDate(maxDate.getDate() + 60);
+      input.max = formatDateISO(maxDate);
+
+      input.addEventListener('change', () => {
+        const data = new Date(input.value + 'T12:00:00');
+        const diaSemana = data.getDay(); // 0 = Domingo
+        const erro = document.getElementById('dataErro');
+        
+        if (diaSemana === 0) {
+          erro.classList.remove('hidden');
+          input.value = '';
+        } else {
+          erro.classList.add('hidden');
+        }
+      });
+    }
+
+    function formatDateISO(date) {
+      return date.toISOString().split('T')[0];
+    }
+
+    // ========== AGENDAMENTO ==========
+    function preSelectService(servico) {
+      document.getElementById('procedimento').value = servico;
+      document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Serviço "${servico}" pré-selecionado!`);
+    }
+
+    function handleAgendamento(e) {
+      e.preventDefault();
+      
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const veiculo = document.getElementById('veiculo').value.trim();
+      const procedimento = document.getElementById('procedimento').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+
+      // Validações
+      if (!nome || !telefone || !veiculo || !procedimento || !data || !hora) {
+        showToast('Preencha todos os campos!', 'error');
+        return;
+      }
+
+      const dataObj = new Date(data + 'T12:00:00');
+      if (dataObj.getDay() === 0) {
+        showToast('Não atendemos aos domingos!', 'error');
+        return;
+      }
+
+      // Salvar no localStorage
+      const agendamento = {
+        id: Date.now(),
+        nome, telefone, veiculo, procedimento, data, hora,
+        criadoEm: new Date().toLocaleString('pt-BR')
+      };
+      
+      const agendamentos = JSON.parse(localStorage.getItem('esteticaPro_agendamentos') || '[]');
+      agendamentos.unshift(agendamento);
+      localStorage.setItem('esteticaPro_agendamentos', JSON.stringify(agendamentos));
+
+      // Montar mensagem WhatsApp
+      const msg = `*🚗 Novo Agendamento - Estética Pro*%0A%0A` +
+        `*Nome:* ${nome}%0A` +
+        `*Telefone:* ${telefone}%0A` +
+        `*Veículo:* ${veiculo}%0A` +
+        `*Serviço:* ${procedimento}%0A` +
+        `*Data:* ${formatarDataBR(data)}%0A` +
+        `*Horário:* ${hora}%0A%0A` +
+        `Aguardo confirmação! ✅`;
+
+      const url = `https://wa.me/5511953429077?text=${msg}`;
+      window.open(url, '_blank');
+
+      // Reset form
+      e.target.reset();
+      renderAgendamentos();
+      showToast('Agendamento enviado via WhatsApp!');
+    }
+
+    function formatarDataBR(dataISO) {
+      const [ano, mes, dia] = dataISO.split('-');
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    // ========== PLANOS WHATSAPP ==========
+    function openPlanWhatsApp(plano, valor) {
+      const msg = `*🌟 Interesse em Plano ${plano} - Estética Pro*%0A%0A` +
+        `Olá! Tenho interesse no *Plano ${plano}* de *R$ ${valor.toFixed(2).replace('.', ',')}*.%0A%0A` +
+        `Gostaria de mais informações e como fazer a assinatura.%0A%0A` +
+        `Aguardo retorno! 🚗✨`;
+      
+      window.open(`https://wa.me/5511953429077?text=${msg}`, '_blank');
+    }
+
+    // ========== ADMIN PANEL ==========
+    function toggleAdmin() {
+      const panel = document.getElementById('adminPanel');
+      panel.classList.toggle('hidden');
+      if (!panel.classList.contains('hidden')) {
+        renderAgendamentos();
+        renderEstoque();
+      }
+    }
+
+    function switchTab(tab) {
+      // Update buttons
+      document.getElementById('tab-agendamentos').className = tab === 'agendamentos' 
+        ? 'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-gold-500 bg-gold-50'
+        : 'flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700';
+      document.getElementById('tab-estoque').className = tab === 'estoque'
+        ? 'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-gold-500 bg-gold-50'
+        : 'flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700';
+
+      // Update content
+      document.getElementById('content-agendamentos').classList.toggle('hidden', tab !== 'agendamentos');
+      document.getElementById('content-estoque').classList.toggle('hidden', tab !== 'estoque');
+    }
+
+    // ========== AGENDAMENTOS TABLE ==========
+    function renderAgendamentos() {
+      const agendamentos = JSON.parse(localStorage.getItem('esteticaPro_agendamentos') || '[]');
+      document.getElementById('countAgendamentos').textContent = `${agendamentos.length} registro${agendamentos.length !== 1 ? 's' : ''}`;
+      
+      const tbody = document.getElementById('tabelaAgendamentos');
+      if (agendamentos.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-8 text-center text-slate-400">Nenhum agendamento registrado</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = agendamentos.map(a => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="px-4 py-3 font-medium text-slate-900">${formatarDataBR(a.data)}<<br><span class="text-xs text-slate-500">${a.hora}</span></td>
+          <td class="px-4 py-3">${a.nome}</td>
+          <td class="px-4 py-3 text-slate-600">${a.veiculo}</td>
+          <td class="px-4 py-3"><span class="px-2 py-1 bg-gold-100 text-gold-700 rounded-md text-xs font-semibold">${a.procedimento}</span></td>
+          <td class="px-4 py-3 text-slate-500">${a.telefone}</td>
+          <td class="px-4 py-3 text-center">
+            <button onclick="deleteAgendamento(${a.id})" class="text-red-500 hover:text-red-700 transition p-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function deleteAgendamento(id) {
+      let agendamentos = JSON.parse(localStorage.getItem('esteticaPro_agendamentos') || '[]');
+      agendamentos = agendamentos.filter(a => a.id !== id);
+      localStorage.setItem('esteticaPro_agendamentos', JSON.stringify(agendamentos));
+      renderAgendamentos();
+      showToast('Agendamento removido');
+    }
+
+    function clearAgendamentos() {
+      if (confirm('Tem certeza que deseja apagar TODOS os agendamentos?')) {
+        localStorage.removeItem('esteticaPro_agendamentos');
+        renderAgendamentos();
+        showToast('Todos os agendamentos foram removidos');
+      }
+    }
+
+    // ========== ESTOQUE ==========
+    function initDefaultStock() {
+      if (!localStorage.getItem('esteticaPro_estoque')) {
+        const defaultStock = [
+          { id: 1, nome: 'Pretinho para Pneus', quantidade: 12, status: 'Disponível' },
+          { id: 2, nome: 'Cera Carnaúba Premium', quantidade: 3, status: 'Alerta de Reposição' },
+          { id: 3, nome: 'Composto Polidor 3M', quantidade: 8, status: 'Disponível' },
+          { id: 4, nome: 'Microfibras de Alta Absorção', quantidade: 25, status: 'Disponível' },
+          { id: 5, nome: 'Vitrificador Cerâmico', quantidade: 2, status: 'Alerta de Reposição' },
+        ];
+        localStorage.setItem('esteticaPro_estoque', JSON.stringify(defaultStock));
+      }
+    }
+
+    function renderEstoque() {
+      const estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
+      const tbody = document.getElementById('tabelaEstoque');
+      
+      if (estoque.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-slate-400">Nenhum produto cadastrado</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = estoque.map(p => {
+        const statusClass = p.status === 'Disponível' 
+          ? 'bg-emerald-100 text-emerald-700' 
+          : 'bg-amber-100 text-amber-700';
+        return `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="px-4 py-3 font-medium text-slate-900">${p.nome}</td>
+          <td class="px-4 py-3 text-center font-bold ${p.quantidade <= 5 ? 'text-red-500' : 'text-slate-700'}">${p.quantidade} un</td>
+          <td class="px-4 py-3 text-center"><span class="px-2 py-1 rounded-md text-xs font-semibold ${statusClass}">${p.status}</span></td>
+          <td class="px-4 py-3 text-center">
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="editStock(${p.id}, 1)" class="text-emerald-600 hover:text-emerald-800 p-1" title="Adicionar">+</button>
+              <button onclick="editStock(${p.id}, -1)" class="text-red-500 hover:text-red-700 p-1" title="Remover">−</button>
+              <button onclick="deleteProduct(${p.id})" class="text-slate-400 hover:text-red-500 p-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `}).join('');
+    }
+
+    function openAddProduct() {
+      document.getElementById('addProductForm').classList.remove('hidden');
+      document.getElementById('produtoNome').focus();
+    }
+
+    function closeAddProduct() {
+      document.getElementById('addProductForm').classList.add('hidden');
+      document.getElementById('produtoNome').value = '';
+      document.getElementById('produtoQtd').value = '';
+      document.getElementById('produtoStatus').value = 'Disponível';
+    }
+
+    function addProduct() {
+      const nome = document.getElementById('produtoNome').value.trim();
+      const qtd = parseInt(document.getElementById('produtoQtd').value);
+      const status = document.getElementById('produtoStatus').value;
+
+      if (!nome || isNaN(qtd) || qtd < 0) {
+        showToast('Preencha todos os campos corretamente!', 'error');
+        return;
+      }
+
+      const estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
+      estoque.push({
+        id: Date.now(),
+        nome,
+        quantidade: qtd,
+        status
+      });
+      localStorage.setItem('esteticaPro_estoque', JSON.stringify(estoque));
+      closeAddProduct();
+      renderEstoque();
+      showToast('Produto adicionado ao estoque!');
+    }
+
+    function editStock(id, delta) {
+      const estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
+      const produto = estoque.find(p => p.id === id);
+      if (!produto) return;
+
+      produto.quantidade = Math.max(0, produto.quantidade + delta);
+      if (produto.quantidade <= 5) {
+        produto.status = 'Alerta de Reposição';
+      } else {
+        produto.status = 'Disponível';
+      }
+
+      localStorage.setItem('esteticaPro_estoque', JSON.stringify(estoque));
+      renderEstoque();
+    }
+
+    function deleteProduct(id) {
+      if (!confirm('Remover este produto do estoque?')) return;
+      let estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
+      estoque = estoque.filter(p => p.id !== id);
+      localStorage.setItem('esteticaPro_estoque', JSON.stringify(estoque));
+      renderEstoque();
+      showToast('Produto removido');
+    }
+
+    // ========== TOAST ==========
+    function showToast(msg, type = 'success') {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      
+      if (type === 'error') {
+        toast.querySelector('svg').classList.replace('text-emerald-400', 'text-red-400');
+        toast.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+      } else {
+        toast.querySelector('svg').classList.replace('text-red-400', 'text-emerald-400');
+        toast.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>';
+      }
+
+      toast.classList.remove('translate-x-full');
+      setTimeout(() => {
+        toast.classList.add('translate-x-full');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
