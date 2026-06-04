@@ -3,261 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estética Pro | Clínica de Estética Médica</title>
+    <title>Sites Profissionais para Esteticistas | Agendamento Automático</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #7c8c9a;
-            --primary-light: #e8edf1;
-            --primary-dark: #5a6b7a;
-            --accent: #c9a87c;
-            --accent-light: #f5efe6;
-            --rose: #c07a95;
-            --rose-light: #f8eef3;
-            --bg: #fafbfc;
-            --surface: #ffffff;
-            --text: #2d3748;
-            --text-muted: #718096;
-        }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-        .font-display {
-            font-family: 'Playfair Display', serif;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-        }
-        .gradient-hero {
-            background: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 30%, #e8edf1 70%, #dde5ed 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .gradient-hero::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(201, 168, 124, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .gradient-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(124, 140, 154, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(45, 55, 72, 0.12);
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #7c8c9a 0%, #6b7d8d 50%, #5a6b7a 100%);
-        }
-        .btn-accent {
-            background: linear-gradient(135deg, #c9a87c 0%, #b8966a 50%, #a88458 100%);
-        }
-        .btn-rose {
-            background: linear-gradient(135deg, #c07a95 0%, #b06885 50%, #a05878 100%);
-        }
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        .shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-            animation: shimmer 3.5s infinite;
-        }
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        .fade-in {
-            animation: fadeIn 0.7s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .pulse-glow {
-            animation: pulseGlow 2.5s infinite;
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.3); }
-            50% { box-shadow: 0 0 30px 15px rgba(16, 185, 129, 0); }
-        }
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-18px); }
-        }
-        .blob {
-            position: absolute;
-            filter: blur(70px);
-            opacity: 0.25;
-            animation: move 25s infinite alternate;
-        }
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(40px, -40px) scale(1.15); }
-        }
-        .img-premium {
-            filter: brightness(1.03) contrast(1.04) saturate(1.08);
-        }
-        .service-price {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: -0.02em;
-        }
-        .agency-banner {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-        }
-        .agency-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); }
+        .gradient-hero { background: linear-gradient(160deg, #fff0f5 0%, #ffc0cb 30%, #ff69b4 70%, #ff1493 100%); position: relative; overflow: hidden; }
+        .gradient-hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(255,20,147,0.15) 0%, transparent 70%); border-radius: 50%; }
+        .gradient-hero::after { content: ''; position: absolute; bottom: -10%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,105,180,0.2) 0%, transparent 70%); border-radius: 50%; }
+        .card-hover { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(255,20,147,0.3); }
+        .gold-bg { background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ffc0cb 100%); }
+        .rose-gradient { background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff85c2 100%); }
+        .shimmer { position: relative; overflow: hidden; }
+        .shimmer::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shimmer 3s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        .pulse-glow { animation: pulseGlow 2s infinite; }
+        @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(255,20,147,0.4); } 50% { box-shadow: 0 0 30px 15px rgba(255,20,147,0); } }
+        .floating { animation: floating 6s ease-in-out infinite; }
+        @keyframes floating { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .blob { position: absolute; filter: blur(60px); opacity: 0.35; animation: move 20s infinite alternate; }
+        @keyframes move { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,-40px) scale(1.1); } }
+        .img-premium { filter: brightness(1.02) contrast(1.05) saturate(1.1); }
+        .whatsapp-btn { background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); transition: all 0.3s ease; }
+        .whatsapp-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(37,211,102,0.4); }
+        .service-card { background: linear-gradient(145deg, #fff0f5 0%, #ffe4e1 100%); border: 2px solid #ffb6c1; }
+        .service-card:hover { border-color: #ff1493; box-shadow: 0 20px 40px rgba(255,20,147,0.2); }
+        .price-tag { background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
     </style>
 <base target="_blank">
-<base target="_blank">
 </head>
-<body class="bg-[#fafbfc] text-slate-800">
+<body class="bg-[#fff0f5] text-slate-800">
 
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-40 glass border-b border-slate-200/60 shadow-sm">
+    <nav class="fixed top-0 w-full z-40 glass border-b border-pink-200/50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 btn-primary rounded-xl flex items-center justify-center shadow-lg">
+                    <div class="w-10 h-10 rose-gradient rounded-xl flex items-center justify-center shadow-lg">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
-                    <span class="text-2xl font-bold text-slate-800">Estética<span class="text-[#7c8c9a]">Pro</span></span>
+                    <span class="text-2xl font-bold text-[#8b0046]">Estética<span class="text-pink-500">Pro</span></span>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#servicos" class="text-sm font-semibold text-slate-500 hover:text-[#7c8c9a] transition">Serviços</a>
-                    <a href="#agendamento" class="text-sm font-semibold text-slate-500 hover:text-[#7c8c9a] transition">Agendar</a>
-                    <a href="#contato" class="text-sm font-semibold text-slate-500 hover:text-[#7c8c9a] transition">Contato</a>
-                    <button onclick="toggleAdmin()" class="text-sm font-semibold text-slate-400 hover:text-[#7c8c9a] transition flex items-center gap-2">
+                    <a href="#planos" class="text-sm font-semibold text-slate-600 hover:text-pink-600 transition">Planos</a>
+                    <a href="#servicos" class="text-sm font-semibold text-slate-600 hover:text-pink-600 transition">Serviços</a>
+                    <a href="#agendamento" class="text-sm font-semibold text-slate-600 hover:text-pink-600 transition">Agendar</a>
+                    <button onclick="toggleAdmin()" class="text-sm font-semibold text-slate-500 hover:text-pink-600 transition flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                         Painel Interno
                     </button>
-                    <a href="#agendamento" class="px-6 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform">
-                        Agendar Agora
-                    </a>
+                    <a href="#planos" class="px-6 py-2.5 rose-gradient text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform">Começar Agora</a>
                 </div>
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-pink-50">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-200/50">
+        <div id="mobileMenu" class="hidden md:hidden glass border-t border-pink-200/50">
             <div class="px-4 py-3 space-y-2">
-                <a href="#servicos" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50">Serviços</a>
-                <a href="#agendamento" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50">Agendar</a>
-                <a href="#contato" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50">Contato</a>
-                <button onclick="toggleAdmin()" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-400 hover:bg-slate-50">Painel Interno</button>
+                <a href="#planos" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-pink-50">Planos</a>
+                <a href="#servicos" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-pink-50">Serviços</a>
+                <a href="#agendamento" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-pink-50">Agendar</a>
+                <button onclick="toggleAdmin()" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-500 hover:bg-pink-50">Painel Interno</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="gradient-hero min-h-screen flex items-center pt-20 px-4 relative">
-        <div class="blob bg-[#c9a87c] w-96 h-96 rounded-full top-20 left-10"></div>
-        <div class="blob bg-[#7c8c9a] w-80 h-80 rounded-full bottom-20 right-10" style="animation-delay: -5s;"></div>
-        <div class="blob bg-[#c07a95] w-72 h-72 rounded-full top-1/2 right-1/4" style="animation-delay: -10s;"></div>
-
+        <div class="blob bg-pink-400 w-96 h-96 rounded-full top-20 left-10"></div>
+        <div class="blob bg-rose-300 w-80 h-80 rounded-full bottom-20 right-10" style="animation-delay: -5s;"></div>
+        <div class="blob bg-pink-200 w-72 h-72 rounded-full top-1/2 right-1/4" style="animation-delay: -10s;"></div>
         <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-slate-200/60 text-[#5a6b7a] text-sm font-semibold mb-8 shadow-sm">
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-pink-300/50 text-[#8b0046] text-sm font-semibold mb-8 shadow-md">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Clínica de Estética Médica
+                    Para Esteticistas e Clínicas de Estética
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-800 mb-6 leading-tight">
-                    Realce sua <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7c8c9a] to-[#5a6b7a] font-display italic">beleza natural.</span><br>
-                    Cuidado <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a87c] to-[#b8966a] font-display italic">profissional.</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-[#8b0046] mb-6 leading-tight">
+                    Pare de perder <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">clientes.</span><br>Agendamento <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-400">automático.</span>
                 </h1>
-                <p class="text-xl text-slate-600 max-w-2xl mb-4 leading-relaxed">
-                    Procedimentos estéticos avançados com <strong class="text-[#5a6b7a]">segurança e resultados comprovados</strong>.
-                </p>
-                <p class="text-base text-slate-500 max-w-xl mb-10 leading-relaxed">
-                    Oferecemos tratamentos personalizados com tecnologia de ponta para rejuvenescimento, harmonização facial e cuidados com a pele. Agende sua consulta gratuita.
-                </p>
+                <p class="text-xl text-slate-700 max-w-2xl mb-4 leading-relaxed">Automatize seus processos e foque no que importa: <strong class="text-pink-600">conquistar novos clientes</strong>.</p>
+                <p class="text-base text-slate-600 max-w-xl mb-10 leading-relaxed">Site profissional com agendamento online direto pelo WhatsApp. Perfeito para esteticistas, clínicas e pequenos comércios de estética.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#agendamento" class="btn-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition transform flex items-center justify-center gap-2 shimmer">
+                    <a href="#planos" class="gold-bg text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition transform flex items-center justify-center gap-2 shimmer">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                        Agendar Consulta
+                        Ver Planos e Preços
                     </a>
-                    <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20procedimentos%20da%20Estética%20Pro" target="_blank" class="bg-white/80 backdrop-blur-md border-2 border-[#c9a87c]/40 text-slate-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition flex items-center justify-center gap-2">
+                    <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20site%20profissional%20para%20minha%20clínica%20de%20estética" target="_blank" class="whatsapp-btn text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         Falar no WhatsApp
                     </a>
                 </div>
-
                 <div class="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0">
-                    <div class="text-center lg:text-left">
-                        <div class="text-3xl font-bold text-[#5a6b7a] font-display">10+</div>
-                        <div class="text-sm text-slate-500">Anos de Experiência</div>
-                    </div>
-                    <div class="text-center lg:text-left">
-                        <div class="text-3xl font-bold text-[#5a6b7a] font-display">5.000+</div>
-                        <div class="text-sm text-slate-500">Clientes Satisfeitos</div>
-                    </div>
-                    <div class="text-center lg:text-left">
-                        <div class="text-3xl font-bold text-[#5a6b7a] font-display">98%</div>
-                        <div class="text-sm text-slate-500">Taxa de Satisfação</div>
-                    </div>
+                    <div class="text-center lg:text-left"><div class="text-3xl font-bold text-[#8b0046]">500+</div><div class="text-sm text-slate-600">Sites Criados</div></div>
+                    <div class="text-center lg:text-left"><div class="text-3xl font-bold text-[#8b0046]">98%</div><div class="text-sm text-slate-600">Satisfação</div></div>
+                    <div class="text-center lg:text-left"><div class="text-3xl font-bold text-[#8b0046]">24/7</div><div class="text-sm text-slate-600">Suporte</div></div>
                 </div>
             </div>
-
             <div class="hidden lg:block relative">
                 <div class="relative z-10 floating">
                     <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=900&fit=crop&q=90" alt="Estética Profissional" class="rounded-3xl shadow-2xl border-4 border-white/80 img-premium">
                     <div class="absolute -left-8 top-20 bg-white rounded-2xl p-4 shadow-xl animate-bounce" style="animation-duration: 3s;">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div>
-                                <div class="font-bold text-slate-900 text-sm">Agendamento</div>
-                                <div class="text-xs text-slate-500">Confirmado!</div>
-                            </div>
+                            <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center"><svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+                            <div><div class="font-bold text-slate-900">Agendamento</div><div class="text-sm text-slate-500">Confirmado!</div></div>
                         </div>
                     </div>
                     <div class="absolute -right-4 bottom-32 bg-white rounded-2xl p-4 shadow-xl animate-bounce" style="animation-duration: 4s;">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-rose-50 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-[#c07a95]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div>
-                                <div class="font-bold text-slate-900 text-sm">Consulta Grátis</div>
-                                <div class="text-xs text-slate-500">Na 1ª visita</div>
-                            </div>
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center"><svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                            <div><div class="font-bold text-slate-900">+R$ 5.000</div><div class="text-sm text-slate-500">Este mês</div></div>
                         </div>
                     </div>
                 </div>
@@ -265,234 +123,166 @@
         </div>
     </section>
 
-    <!-- Serviços Completos -->
+    <!-- Para Quem É -->
+    <section class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Solução Perfeita Para Você</h2>
+                <p class="text-xl text-slate-500 max-w-2xl mx-auto">Atendemos diferentes perfis de profissionais da beleza e estética</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-pink-200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop&q=90" alt="Esteticista Autônoma" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><div class="w-14 h-14 rose-gradient rounded-2xl flex items-center justify-center mb-3 shadow-lg"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div></div>
+                    </div>
+                    <div class="p-6"><h3 class="text-2xl font-bold text-slate-900 mb-3">Esteticistas Autônomas</h3><p class="text-slate-600 leading-relaxed">Profissionais que atendem em casa ou estúdio próprio e querem profissionalizar o atendimento com um site moderno.</p></div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-pink-200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop&q=90" alt="Clínica de Estética" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><div class="w-14 h-14 rose-gradient rounded-2xl flex items-center justify-center mb-3 shadow-lg"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div></div>
+                    </div>
+                    <div class="p-6"><h3 class="text-2xl font-bold text-slate-900 mb-3">Clínicas de Estética</h3><p class="text-slate-600 leading-relaxed">Clínicas que precisam de agendamento online e querem automatizar o atendimento para atender mais clientes.</p></div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-pink-200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&q=90" alt="Pequeno Comércio de Beleza" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><div class="w-14 h-14 rose-gradient rounded-2xl flex items-center justify-center mb-3 shadow-lg"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></div></div>
+                    </div>
+                    <div class="p-6"><h3 class="text-2xl font-bold text-slate-900 mb-3">Pequenos Comércios</h3><p class="text-slate-600 leading-relaxed">Negócios de beleza e estética que querem vender mais, conquistar novos clientes e se destacar da concorrência.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" class="py-24 px-4 bg-gradient-to-br from-pink-50 to-rose-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Invista no Crescimento do Seu Negócio</h2>
+                <p class="text-xl text-slate-500">Site profissional + agendamento automático + gestão inteligente</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 border-2 border-pink-200 card-hover relative overflow-hidden shadow-xl">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-200 to-rose-200 rounded-bl-full -mr-8 -mt-8"></div>
+                    <div class="relative">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-pink-700 text-sm font-bold mb-4"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Pagamento Único</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Criação do Site</h3>
+                        <div class="flex items-baseline gap-2 mb-6"><span class="text-sm text-slate-500">a partir de</span><span class="text-6xl font-bold text-pink-600">R$ 600</span></div>
+                        <p class="text-slate-600 mb-8">Seu site profissional pronto em até 7 dias</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-700"><div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Design moderno e responsivo</li>
+                            <li class="flex items-center gap-3 text-slate-700"><div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Agendamento online via WhatsApp</li>
+                            <li class="flex items-center gap-3 text-slate-700"><div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Otimizado para Google (SEO)</li>
+                            <li class="flex items-center gap-3 text-slate-700"><div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Catálogo de serviços com fotos</li>
+                            <li class="flex items-center gap-3 text-slate-700"><div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Botão flutuante do WhatsApp</li>
+                        </ul>
+                        <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20contratar%20a%20criação%20do%20site%20profissional%20por%20R$%20600" target="_blank" class="block w-full py-4 rounded-xl rose-gradient text-white font-bold text-center hover:shadow-xl hover:scale-105 transition transform">Quero Meu Site Agora</a>
+                    </div>
+                </div>
+                <div class="relative bg-gradient-to-br from-pink-600 via-rose-500 to-pink-400 rounded-3xl p-8 card-hover overflow-hidden shadow-2xl transform scale-105">
+                    <div class="absolute top-4 right-4 gold-bg text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">MAIS POPULAR</div>
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-bl-full -mr-10 -mt-10"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-tr-full -ml-10 -mb-10"></div>
+                    <div class="relative">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-bold mb-4 backdrop-blur-sm"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Recomendado</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Gestão Mensal</h3>
+                        <div class="flex items-baseline gap-2 mb-2"><span class="text-white/80 text-sm">a partir de</span><span class="text-6xl font-bold text-white">R$ 80</span><span class="text-white/80">/mês</span></div>
+                        <p class="text-white/80 mb-6">Manutenção + suporte + atualizações</p>
+                        <div class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-3 rounded-xl mb-8 inline-flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Sem fidelidade — cancele quando quiser</div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-white"><div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Hospedagem e domínio inclusos</li>
+                            <li class="flex items-center gap-3 text-white"><div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Atualizações ilimitadas</li>
+                            <li class="flex items-center gap-3 text-white"><div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Suporte técnico prioritário</li>
+                            <li class="flex items-center gap-3 text-white"><div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Painel de agendamentos</li>
+                            <li class="flex items-center gap-3 text-white"><div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>Controle de estoque</li>
+                        </ul>
+                        <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20contratar%20a%20gestão%20mensal%20do%20site%20por%20R$%2080/mês" target="_blank" class="block w-full py-4 rounded-xl gold-bg text-white font-bold text-center hover:shadow-xl hover:scale-105 transition transform shimmer">Contratar Gestão Mensal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
     <section id="servicos" class="py-24 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-sm font-semibold text-[#c9a87c] tracking-widest uppercase">Nossos Tratamentos</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 mt-3 font-display">Procedimentos Estéticos</h2>
-                <p class="text-xl text-slate-400 max-w-2xl mx-auto">Tecnologia avançada e equipe especializada para cuidar da sua beleza com resultados naturais.</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Veja Como Fica Seu Site</h2>
+                <p class="text-xl text-slate-500">Exemplo de catálogo de serviços com agendamento direto pelo WhatsApp</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço 1: Toxina Botulínica -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&q=90" alt="Toxina Botulínica" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                        <div class="absolute top-4 right-4">
-                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-[#c07a95] shadow-sm">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Mais Procurado
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Toxina Botulínica</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Suavização de rugas e linhas de expressão. Resultado natural, sem aspecto artificial. Efeito dura de 4 a 6 meses.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 350</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Toxina%20Botulínica*%20(R$%20350,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço 2: Preenchimento Labial -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1614850715649-1d0106293bd1?w=600&h=400&fit=crop&q=90" alt="Preenchimento Labial" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                        <div class="absolute top-4 right-4">
-                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-[#c9a87c] shadow-sm">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 4a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1V7a1 1 0 011-1z" clip-rule="evenodd"/></svg>
-                                Premium
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Preenchimento Labial</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Hidratação e volume dos lábios com ácido hialurônico de alta qualidade. Resultado harmonioso e duradouro.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 680</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Preenchimento%20Labial*%20(R$%20680,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço 3: Limpeza de Pele Profunda -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop&q=90" alt="Limpeza de Pele Profunda" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                        <div class="absolute top-4 right-4">
-                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-emerald-600 shadow-sm">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Clássico
-                            </span>
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><span class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-pink-700">Mais Popular</span></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Limpeza de Pele Profunda</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Remoção completa de impurezas, cravos e células mortas com produtos dermatologicamente testados.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 120</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Limpeza%20de%20Pele%20Profunda*%20(R$%20120,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <p class="text-sm text-slate-500 mb-4">Remoção de impurezas, cravos e células mortas com produtos dermatologicamente testados</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 120</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Limpeza%20de%20Pele%20Profunda*%20(R$%20120,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
-
-                <!-- Serviço 4: Peeling Químico -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?w=600&h=400&fit=crop&q=90" alt="Peeling Químico" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Peeling Químico</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Renovação celular profunda que trata manchas, acne e melasma. Pele mais luminosa e uniforme.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 200</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Peeling%20Químico*%20(R$%20200,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço 5: Drenagem Linfática -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=400&fit=crop&q=90" alt="Drenagem Linfática" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=400&fit=crop&q=90" alt="Drenagem Linfática Corporal" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Drenagem Linfática</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Estimulação do sistema linfático para redução de edemas, melhora da circulação e relaxamento profundo.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 150</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Drenagem%20Linfática*%20(R$%20150,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <p class="text-sm text-slate-500 mb-4">Estimulação do sistema linfático para redução de edemas e melhora da circulação</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 150</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Drenagem%20Linfática%20Corporal*%20(R$%20150,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
-
-                <!-- Serviço 6: Massagem Modeladora -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop&q=90" alt="Massagem Modeladora" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop&q=90" alt="Massagem Modeladora Redutora" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Massagem Modeladora</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Técnica intensiva para redução de medidas, combate à celulite e modelagem corporal com ativos redutores.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 160</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Massagem%20Modeladora*%20(R$%20160,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <p class="text-sm text-slate-500 mb-4">Técnica intensiva para redução de medidas e combate à gordura localizada</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 160</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Massagem%20Modeladora%20Redutora*%20(R$%20160,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
-
-                <!-- Serviço 7: Bioestimulador de Colágeno -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=400&fit=crop&q=90" alt="Bioestimulador de Colágeno" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                        <div class="absolute top-4 right-4">
-                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-[#c9a87c] shadow-sm">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1z" clip-rule="evenodd"/></svg>
-                                Premium
-                            </span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop&q=90" alt="Aplicação de Botox" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><span class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-pink-700">Premium</span></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Bioestimulador de Colágeno</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Tratamento de rejuvenescimento que estimula a produção natural de colágeno para firmeza e elasticidade da pele.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 1.200</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Bioestimulador%20de%20Colágeno*%20(R$%201.200,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aplicação de Botox</h3>
+                        <p class="text-sm text-slate-500 mb-4">Suavização de rugas e linhas de expressão com produtos de alta qualidade</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 350</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Aplicação%20de%20Botox*%20(R$%20350,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
-
-                <!-- Serviço 8: Laser para Manchas -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=400&fit=crop&q=90" alt="Laser para Manchas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=90" alt="Peeling Químico" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Laser para Manchas</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Tecnologia a laser para clareamento de manchas solares, melasma e hiperpigmentação com resultados progressivos.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 280</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Laser%20para%20Manchas*%20(R$%20280,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Peeling Químico</h3>
+                        <p class="text-sm text-slate-500 mb-4">Renovação celular profunda para pele mais luminosa e uniforme</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 200</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Peeling%20Químico*%20(R$%20200,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
-
-                <!-- Serviço 9: Carboxiterapia -->
-                <div class="bg-[#fafbfc] rounded-2xl overflow-hidden shadow-lg card-hover group border border-slate-100">
+                <div class="service-card rounded-2xl overflow-hidden shadow-lg card-hover group">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b7?w=600&h=400&fit=crop&q=90" alt="Carboxiterapia" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=400&fit=crop&q=90" alt="Carboxiterapia" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 img-premium">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4"><span class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-pink-700">Novo</span></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Carboxiterapia</h3>
-                        <p class="text-sm text-slate-500 mb-4 leading-relaxed">Aplicação de gás carbônico medicinal para combate à celulite, estrias e flacidez com resultados visíveis.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-slate-400">a partir de</span>
-                                <span class="service-price text-3xl font-bold text-[#7c8c9a] block">R$ 180</span>
-                            </div>
-                            <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20procedimento%20de%20*Carboxiterapia*%20(R$%20180,00)" target="_blank" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-full hover:shadow-lg hover:scale-105 transition transform flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Agendar
-                            </a>
-                        </div>
+                        <p class="text-sm text-slate-500 mb-4">Tratamento com gás carbônico para celulite e flacidez</p>
+                        <div class="flex items-center justify-between"><span class="price-tag text-3xl">R$ 180</span><a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20o%20serviço%20de%20*Carboxiterapia*%20(R$%20180,00)" target="_blank" class="whatsapp-btn px-5 py-2.5 text-white text-sm font-bold rounded-full flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar</a></div>
                     </div>
                 </div>
             </div>
@@ -500,93 +290,36 @@
     </section>
 
     <!-- Agendamento -->
-    <section id="agendamento" class="py-24 px-4 bg-gradient-to-br from-[#f1f5f9] to-white">
+    <section id="agendamento" class="py-24 px-4 bg-gradient-to-br from-pink-50 to-white">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12">
-                <span class="text-sm font-semibold text-[#c9a87c] tracking-widest uppercase">Agende Agora</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 mt-3 font-display">Agende seu Horário</h2>
-                <p class="text-lg text-slate-400">Preencha os dados abaixo e envie diretamente pelo WhatsApp</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Agende seu Horário</h2>
+                <p class="text-lg text-slate-500">Preencha os dados abaixo e envie diretamente pelo WhatsApp</p>
             </div>
-            <div class="bg-white rounded-3xl p-8 shadow-2xl border border-slate-100">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border border-pink-200">
                 <form id="agendamentoForm" onsubmit="handleAgendamento(event)">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nome Completo</label>
-                            <input type="text" id="nome" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#7c8c9a] focus:ring-2 focus:ring-slate-100 outline-none transition bg-slate-50/50" placeholder="Seu nome">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Telefone</label>
-                            <input type="tel" id="telefone" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#7c8c9a] focus:ring-2 focus:ring-slate-100 outline-none transition bg-slate-50/50" placeholder="(11) 99999-9999">
-                        </div>
+                        <div><label class="block text-sm font-semibold text-slate-700 mb-2">Nome Completo</label><input type="text" id="nome" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" placeholder="Seu nome"></div>
+                        <div><label class="block text-sm font-semibold text-slate-700 mb-2">Telefone</label><input type="tel" id="telefone" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition" placeholder="(11) 99999-9999"></div>
                     </div>
                     <div class="mb-6">
                         <label class="block text-sm font-semibold text-slate-700 mb-2">Procedimento Desejado</label>
-                        <select id="procedimento" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#7c8c9a] focus:ring-2 focus:ring-slate-100 outline-none transition bg-white">
+                        <select id="procedimento" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition bg-white">
                             <option value="">Selecione um serviço</option>
-                            <option value="Toxina Botulínica">Toxina Botulínica — R$ 350,00</option>
-                            <option value="Preenchimento Labial">Preenchimento Labial — R$ 680,00</option>
                             <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda — R$ 120,00</option>
-                            <option value="Peeling Químico">Peeling Químico — R$ 200,00</option>
-                            <option value="Drenagem Linfática">Drenagem Linfática — R$ 150,00</option>
-                            <option value="Massagem Modeladora">Massagem Modeladora — R$ 160,00</option>
-                            <option value="Bioestimulador de Colágeno">Bioestimulador de Colágeno — R$ 1.200,00</option>
-                            <option value="Laser para Manchas">Laser para Manchas — R$ 280,00</option>
-                            <option value="Carboxiterapia">Carboxiterapia — R$ 180,00</option>
+                            <option value="Drenagem Linfática Corporal">Drenagem Linfática Corporal — R$ 150,00</option>
+                            <option value="Massagem Modeladora Redutora">Massagem Modeladora Redutora — R$ 160,00</option>
+                            <option value="Aplicação de Botox (Região)">Aplicação de Botox (Região) — R$ 350,00</option>
+                            <option value="Peeling Químico Renovador">Peeling Químico Renovador — R$ 200,00</option>
+                            <option value="Carboxiterapia para Celulite">Carboxiterapia para Celulite — R$ 180,00</option>
                         </select>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Data</label>
-                            <input type="date" id="data" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#7c8c9a] focus:ring-2 focus:ring-slate-100 outline-none transition bg-slate-50/50">
-                            <p id="dataErro" class="text-red-500 text-xs mt-1 hidden">Domingos não são permitidos. Escolha Seg-Sáb.</p>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Horário</label>
-                            <select id="hora" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#7c8c9a] focus:ring-2 focus:ring-slate-100 outline-none transition bg-white">
-                                <option value="">Selecione</option>
-                            </select>
-                            <p id="horaErro" class="text-red-500 text-xs mt-1 hidden">Horário fora do expediente (08:00-18:00).</p>
-                        </div>
+                        <div><label class="block text-sm font-semibold text-slate-700 mb-2">Data</label><input type="date" id="data" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition"><p id="dataErro" class="text-red-500 text-xs mt-1 hidden">❌ Domingos não são permitidos. Escolha Seg-Sáb.</p></div>
+                        <div><label class="block text-sm font-semibold text-slate-700 mb-2">Horário</label><select id="hora" required class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition bg-white"><option value="">Selecione</option></select><p id="horaErro" class="text-red-500 text-xs mt-1 hidden">❌ Horário fora do expediente (08:00-18:00).</p></div>
                     </div>
-                    <button type="submit" class="w-full py-4 rounded-xl btn-accent text-white font-bold text-lg hover:shadow-xl hover:scale-[1.02] transition transform flex items-center justify-center gap-2 shimmer">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Finalizar e Agendar via WhatsApp
-                    </button>
+                    <button type="submit" class="w-full py-4 rounded-xl gold-bg text-white font-bold text-lg hover:shadow-xl hover:scale-105 transition transform flex items-center justify-center gap-2 shimmer"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Finalizar e Agendar via WhatsApp</button>
                 </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="py-24 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-sm font-semibold text-[#c9a87c] tracking-widest uppercase">Fale Conosco</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 mt-3 font-display">Entre em Contato</h2>
-                <p class="text-xl text-slate-400">Estamos prontos para atender você</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="text-center p-8 rounded-2xl bg-[#fafbfc] border border-slate-100">
-                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 mb-1">WhatsApp</h3>
-                    <p class="text-sm text-slate-500">(11) 95342-9077</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-[#fafbfc] border border-slate-100">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 mb-1">E-mail</h3>
-                    <p class="text-sm text-slate-500">flaviojorrge@gmail.com</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-[#fafbfc] border border-slate-100">
-                    <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 mb-1">Horário</h3>
-                    <p class="text-sm text-slate-500">Seg-Sáb: 08h às 18h</p>
-                </div>
             </div>
         </div>
     </section>
@@ -595,69 +328,34 @@
     <div id="adminPanel" class="hidden py-16 px-4 bg-slate-50 border-t border-slate-200">
         <div class="max-w-6xl mx-auto">
             <div class="flex items-center justify-between mb-8">
-                <h2 class="text-3xl font-bold text-slate-900 font-display">Painel Interno</h2>
-                <button onclick="toggleAdmin()" class="text-slate-400 hover:text-slate-600 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
+                <h2 class="text-3xl font-bold text-slate-900">Painel Interno</h2>
+                <button onclick="toggleAdmin()" class="text-slate-500 hover:text-slate-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
             </div>
             <div class="flex border-b border-slate-200 mb-6">
-                <button id="tab-agendamentos" onclick="switchTab('agendamentos')" class="flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-[#7c8c9a] bg-slate-100">Agendamentos</button>
+                <button id="tab-agendamentos" onclick="switchTab('agendamentos')" class="flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-pink-500 bg-pink-50">Agendamentos</button>
                 <button id="tab-estoque" onclick="switchTab('estoque')" class="flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700">Estoque</button>
             </div>
             <div id="content-agendamentos">
-                <div class="flex justify-between items-center mb-4">
-                    <span id="countAgendamentos" class="text-sm text-slate-500">0 registros</span>
-                    <button onclick="clearAgendamentos()" class="text-xs text-red-500 hover:text-red-700 transition">Limpar tudo</button>
-                </div>
-                <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-100">
+                <div class="flex justify-between items-center mb-4"><span id="countAgendamentos" class="text-sm text-slate-500">0 registros</span><button onclick="clearAgendamentos()" class="text-xs text-red-500 hover:text-red-700">Limpar tudo</button></div>
+                <div class="overflow-x-auto bg-white rounded-xl shadow">
                     <table class="w-full text-left">
-                        <thead class="bg-slate-50">
-                            <tr>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Data/Hora</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Nome</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Serviço</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Telefone</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Ações</th>
-                            </tr>
-                        </thead>
+                        <thead class="bg-slate-50"><tr><th class="px-4 py-3 text-sm font-semibold text-slate-600">Data/Hora</th><th class="px-4 py-3 text-sm font-semibold text-slate-600">Nome</th><th class="px-4 py-3 text-sm font-semibold text-slate-600">Serviço</th><th class="px-4 py-3 text-sm font-semibold text-slate-600">Telefone</th><th class="px-4 py-3 text-sm font-semibold text-slate-600">Ações</th></tr></thead>
                         <tbody id="tabelaAgendamentos"></tbody>
                     </table>
                 </div>
             </div>
             <div id="content-estoque" class="hidden">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-sm text-slate-500">Controle de produtos</span>
-                    <button onclick="openAddProduct()" class="px-4 py-2 bg-[#7c8c9a] text-white text-sm font-semibold rounded-lg hover:bg-[#5a6b7a] transition">+ Adicionar</button>
+                <div class="flex justify-between items-center mb-4"><span class="text-sm text-slate-500">Controle de produtos</span><button onclick="openAddProduct()" class="px-4 py-2 bg-pink-500 text-white text-sm font-semibold rounded-lg hover:bg-pink-600 transition">+ Adicionar</button></div>
+                <div id="addProductForm" class="hidden bg-white p-4 rounded-xl shadow mb-4 flex flex-wrap gap-3 items-end">
+                    <div class="flex-1 min-w-[200px]"><label class="block text-xs font-semibold text-slate-600 mb-1">Nome do Produto</label><input type="text" id="produtoNome" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm"></div>
+                    <div class="w-24"><label class="block text-xs font-semibold text-slate-600 mb-1">Qtd</label><input type="number" id="produtoQtd" min="0" value="0" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm"></div>
+                    <div class="w-40"><label class="block text-xs font-semibold text-slate-600 mb-1">Status</label><select id="produtoStatus" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm"><option value="Disponível">Disponível</option><option value="Alerta de Reposição">Alerta de Reposição</option></select></div>
+                    <button onclick="addProduct()" class="px-4 py-2 bg-emerald-500 text-white text-sm font-semibold rounded-lg hover:bg-emerald-600">Salvar</button>
+                    <button onclick="closeAddProduct()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm font-semibold rounded-lg hover:bg-slate-300">Cancelar</button>
                 </div>
-                <div id="addProductForm" class="hidden bg-white p-4 rounded-xl shadow-sm border border-slate-100 mb-4 flex flex-wrap gap-3 items-end">
-                    <div class="flex-1 min-w-[200px]">
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Nome do Produto</label>
-                        <input type="text" id="produtoNome" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-[#7c8c9a] focus:ring-1 focus:ring-slate-200 outline-none">
-                    </div>
-                    <div class="w-24">
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Qtd</label>
-                        <input type="number" id="produtoQtd" min="0" value="0" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-[#7c8c9a] outline-none">
-                    </div>
-                    <div class="w-40">
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Status</label>
-                        <select id="produtoStatus" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:border-[#7c8c9a] outline-none">
-                            <option value="Disponível">Disponível</option>
-                            <option value="Alerta de Reposição">Alerta de Reposição</option>
-                        </select>
-                    </div>
-                    <button onclick="addProduct()" class="px-4 py-2 bg-emerald-500 text-white text-sm font-semibold rounded-lg hover:bg-emerald-600 transition">Salvar</button>
-                    <button onclick="closeAddProduct()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm font-semibold rounded-lg hover:bg-slate-300 transition">Cancelar</button>
-                </div>
-                <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-100">
+                <div class="overflow-x-auto bg-white rounded-xl shadow">
                     <table class="w-full text-left">
-                        <thead class="bg-slate-50">
-                            <tr>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600">Produto</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Quantidade</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Status</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Ações</th>
-                            </tr>
-                        </thead>
+                        <thead class="bg-slate-50"><tr><th class="px-4 py-3 text-sm font-semibold text-slate-600">Produto</th><th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Quantidade</th><th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Status</th><th class="px-4 py-3 text-sm font-semibold text-slate-600 text-center">Ações</th></tr></thead>
                         <tbody id="tabelaEstoque"></tbody>
                     </table>
                 </div>
@@ -667,52 +365,25 @@
 
     <!-- Toast -->
     <div id="toast" class="fixed top-4 right-4 bg-white rounded-xl shadow-xl px-5 py-3 flex items-center gap-3 translate-x-full transition-transform duration-300 z-50 border border-slate-100">
-        <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
         <span id="toastMsg" class="text-sm font-medium text-slate-700"></span>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300 py-12 px-4" id="contato">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 btn-primary rounded-xl flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <span class="text-2xl font-bold text-white">Estética<span class="text-[#7c8c9a]">Pro</span></span>
-                </div>
-                <div class="text-center md:text-right">
-                    <p class="text-sm">Sites Profissionais para Estética Médica</p>
-                    <p class="text-sm">Dúvidas? <a href="mailto:flaviojorrge@gmail.com" class="text-[#c9a87c] hover:underline">flaviojorrge@gmail.com</a></p>
-                </div>
+    <footer class="bg-[#8b0046] text-pink-200 py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <div class="w-10 h-10 rose-gradient rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <span class="text-2xl font-bold text-white">Estética<span class="text-pink-300">Pro</span></span>
             </div>
-            <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm text-slate-400">
-                © 2026 Estética Pro. Todos os direitos reservados.
-            </div>
+            <p class="mb-2 text-lg">Sites Profissionais para Esteticistas e Clínicas de Estética</p>
+            <p class="text-sm mb-6">Dúvidas? <a href="mailto:flaviojorrge@gmail.com" class="text-pink-300 hover:underline">flaviojorrge@gmail.com</a></p>
+            <div class="border-t border-pink-800 pt-6 text-sm">© 2026 Estética Pro. Todos os direitos reservados.</div>
         </div>
     </footer>
 
-    <!-- Banner da Agência -->
-    <div class="agency-banner relative py-5 px-4 overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                    <svg class="w-5 h-5 text-[#c9a87c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <span class="text-white/70 text-sm font-medium">Quer um site profissional como este?</span>
-            </div>
-            <div class="flex items-center gap-4 flex-wrap justify-center">
-                <span class="text-white font-display text-2xl md:text-3xl font-bold tracking-tight">Sites a partir de <span class="text-[#c9a87c]">R$ 600</span></span>
-                <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20um%20site%20profissional%20para%20minha%20clínica%20de%20estética" target="_blank" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-bold rounded-full border border-white/20 transition flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Fale Conosco
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20agendar%20uma%20consulta%20na%20Estética%20Pro" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 pulse-glow" aria-label="WhatsApp">
+    <a href="https://wa.me/5511953429077?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20site%20profissional%20para%20minha%20clínica%20de%20estética" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 pulse-glow" aria-label="WhatsApp">
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
@@ -736,8 +407,8 @@
                 ['00', '30'].forEach(min => {
                     if (h === 18 && min === '30') return;
                     const opt = document.createElement('option');
-                    opt.value = `${hora}:${min}`;
-                    opt.textContent = `${hora}:${min}`;
+                    opt.value = hora + ':' + min;
+                    opt.textContent = hora + ':' + min;
                     select.appendChild(opt);
                 });
             }
@@ -788,7 +459,7 @@
             }
 
             const agendamento = {
-                id: Date.now(), nome, telefone, procedimento, data, hora,
+                id: Date.now(), nome: nome, telefone: telefone, procedimento: procedimento, data: data, hora: hora,
                 criadoEm: new Date().toLocaleString('pt-BR')
             };
 
@@ -796,16 +467,16 @@
             agendamentos.unshift(agendamento);
             localStorage.setItem('esteticaPro_agendamentos', JSON.stringify(agendamentos));
 
-            const msg = `*✨ Novo Agendamento - Estética Pro*%0A%0A*Nome:* ${nome}%0A*Telefone:* ${telefone}%0A*Serviço:* ${procedimento}%0A*Data:* ${formatarDataBR(data)}%0A*Horário:* ${hora}%0A%0AAguardo confirmação! ✅`;
-            window.open(`https://wa.me/5511953429077?text=${msg}`, '_blank');
+            const msg = '*🌸 Novo Agendamento - Estética Pro*%0A%0A*Nome:* ' + nome + '%0A*Telefone:* ' + telefone + '%0A*Serviço:* ' + procedimento + '%0A*Data:* ' + formatarDataBR(data) + '%0A*Horário:* ' + hora + '%0A%0AAguardo confirmação! ✅';
+            window.open('https://wa.me/5511953429077?text=' + msg, '_blank');
             e.target.reset();
             renderAgendamentos();
             showToast('Agendamento enviado via WhatsApp!');
         }
 
         function formatarDataBR(dataISO) {
-            const [ano, mes, dia] = dataISO.split('-');
-            return `${dia}/${mes}/${ano}`;
+            const partes = dataISO.split('-');
+            return partes[2] + '/' + partes[1] + '/' + partes[0];
         }
 
         function toggleAdmin() {
@@ -821,10 +492,10 @@
 
         function switchTab(tab) {
             document.getElementById('tab-agendamentos').className = tab === 'agendamentos' ?
-                'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-[#7c8c9a] bg-slate-100' :
+                'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-pink-500 bg-pink-50' :
                 'flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700';
             document.getElementById('tab-estoque').className = tab === 'estoque' ?
-                'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-[#7c8c9a] bg-slate-100' :
+                'flex-1 px-4 py-3 text-sm font-semibold text-slate-900 border-b-2 border-pink-500 bg-pink-50' :
                 'flex-1 px-4 py-3 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-700';
             document.getElementById('content-agendamentos').classList.toggle('hidden', tab !== 'agendamentos');
             document.getElementById('content-estoque').classList.toggle('hidden', tab !== 'estoque');
@@ -833,31 +504,21 @@
         function renderAgendamentos() {
             const agendamentos = JSON.parse(localStorage.getItem('esteticaPro_agendamentos') || '[]');
             const countEl = document.getElementById('countAgendamentos');
-            if (countEl) countEl.textContent = `${agendamentos.length} registro${agendamentos.length !== 1 ? 's' : ''}`;
+            if (countEl) countEl.textContent = agendamentos.length + ' registro' + (agendamentos.length !== 1 ? 's' : '');
             const tbody = document.getElementById('tabelaAgendamentos');
             if (!tbody) return;
             if (agendamentos.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="5" class="px-4 py-8 text-center text-slate-400">Nenhum agendamento registrado</td></tr>';
                 return;
             }
-            tbody.innerHTML = agendamentos.map(a => `
-                <tr class="hover:bg-slate-50/50 transition">
-                    <td class="px-4 py-3 font-medium text-slate-900">${formatarDataBR(a.data)}<br><span class="text-xs text-slate-500">${a.hora}</span></td>
-                    <td class="px-4 py-3">${a.nome}</td>
-                    <td class="px-4 py-3"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-semibold">${a.procedimento}</span></td>
-                    <td class="px-4 py-3 text-slate-500">${a.telefone}</td>
-                    <td class="px-4 py-3 text-center">
-                        <button onclick="deleteAgendamento(${a.id})" class="text-red-400 hover:text-red-600 transition p-1">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                        </button>
-                    </td>
-                </tr>
-            `).join('');
+            tbody.innerHTML = agendamentos.map(function(a) {
+                return '<tr class="hover:bg-pink-50/30 transition"><td class="px-4 py-3 font-medium text-slate-900">' + formatarDataBR(a.data) + '<br><span class="text-xs text-slate-500">' + a.hora + '</span></td><td class="px-4 py-3">' + a.nome + '</td><td class="px-4 py-3"><span class="px-2 py-1 bg-pink-100 text-pink-700 rounded-md text-xs font-semibold">' + a.procedimento + '</span></td><td class="px-4 py-3 text-slate-500">' + a.telefone + '</td><td class="px-4 py-3 text-center"><button onclick="deleteAgendamento(' + a.id + ')" class="text-red-500 hover:text-red-700 transition p-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></td></tr>';
+            }).join('');
         }
 
         function deleteAgendamento(id) {
             let agendamentos = JSON.parse(localStorage.getItem('esteticaPro_agendamentos') || '[]');
-            agendamentos = agendamentos.filter(a => a.id !== id);
+            agendamentos = agendamentos.filter(function(a) { return a.id !== id; });
             localStorage.setItem('esteticaPro_agendamentos', JSON.stringify(agendamentos));
             renderAgendamentos();
             showToast('Agendamento removido');
@@ -874,12 +535,11 @@
         function initDefaultStock() {
             if (!localStorage.getItem('esteticaPro_estoque')) {
                 localStorage.setItem('esteticaPro_estoque', JSON.stringify([
-                    { id: 1, nome: 'Toxina Botulínica 100UI', quantidade: 8, status: 'Disponível' },
-                    { id: 2, nome: 'Ácido Hialurônico 1ml', quantidade: 4, status: 'Disponível' },
-                    { id: 3, nome: 'Creme Pós-Procedimento', quantidade: 12, status: 'Disponível' },
-                    { id: 4, nome: 'Máscara de Argila Verde', quantidade: 3, status: 'Alerta de Reposição' },
-                    { id: 5, nome: 'Luvas de Procedimento', quantidade: 50, status: 'Disponível' },
-                    { id: 6, nome: 'Solução Peeling Químico', quantidade: 2, status: 'Alerta de Reposição' },
+                    { id: 1, nome: 'Creme Hidratante Facial', quantidade: 12, status: 'Disponível' },
+                    { id: 2, nome: 'Máscara de Argila Verde', quantidade: 3, status: 'Alerta de Reposição' },
+                    { id: 3, nome: 'Luvas de Procedimento', quantidade: 8, status: 'Disponível' },
+                    { id: 4, nome: 'Agulhas para Botox', quantidade: 25, status: 'Disponível' },
+                    { id: 5, nome: 'Ácido Hialurônico', quantidade: 2, status: 'Alerta de Reposição' },
                 ]));
             }
         }
@@ -892,24 +552,9 @@
                 tbody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-slate-400">Nenhum produto cadastrado</td></tr>';
                 return;
             }
-            tbody.innerHTML = estoque.map(p => {
-                const statusClass = p.status === 'Disponível' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700';
-                return `
-                    <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-4 py-3 font-medium text-slate-900">${p.nome}</td>
-                        <td class="px-4 py-3 text-center font-bold ${p.quantidade <= 5 ? 'text-red-500' : 'text-slate-700'}">${p.quantidade} un</td>
-                        <td class="px-4 py-3 text-center"><span class="px-2 py-1 rounded-md text-xs font-semibold ${statusClass}">${p.status}</span></td>
-                        <td class="px-4 py-3 text-center">
-                            <div class="flex items-center justify-center gap-2">
-                                <button onclick="editStock(${p.id}, 1)" class="text-emerald-500 hover:text-emerald-700 p-1 transition">+</button>
-                                <button onclick="editStock(${p.id}, -1)" class="text-red-400 hover:text-red-600 p-1 transition">−</button>
-                                <button onclick="deleteProduct(${p.id})" class="text-slate-400 hover:text-red-500 p-1 transition">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `;
+            tbody.innerHTML = estoque.map(function(p) {
+                const statusClass = p.status === 'Disponível' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700';
+                return '<tr class="hover:bg-slate-50 transition"><td class="px-4 py-3 font-medium text-slate-900">' + p.nome + '</td><td class="px-4 py-3 text-center font-bold ' + (p.quantidade <= 5 ? 'text-red-500' : 'text-slate-700') + '">' + p.quantidade + ' un</td><td class="px-4 py-3 text-center"><span class="px-2 py-1 rounded-md text-xs font-semibold ' + statusClass + '">' + p.status + '</span></td><td class="px-4 py-3 text-center"><div class="flex items-center justify-center gap-2"><button onclick="editStock(' + p.id + ', 1)" class="text-emerald-600 hover:text-emerald-800 p-1">+</button><button onclick="editStock(' + p.id + ', -1)" class="text-red-500 hover:text-red-700 p-1">−</button><button onclick="deleteProduct(' + p.id + ')" class="text-slate-400 hover:text-red-500 p-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></div></td></tr>';
             }).join('');
         }
 
@@ -934,7 +579,7 @@
                 return;
             }
             const estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
-            estoque.push({ id: Date.now(), nome, quantidade: qtd, status });
+            estoque.push({ id: Date.now(), nome: nome, quantidade: qtd, status: status });
             localStorage.setItem('esteticaPro_estoque', JSON.stringify(estoque));
             closeAddProduct();
             renderEstoque();
@@ -943,7 +588,7 @@
 
         function editStock(id, delta) {
             const estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
-            const produto = estoque.find(p => p.id === id);
+            const produto = estoque.find(function(p) { return p.id === id; });
             if (!produto) return;
             produto.quantidade = Math.max(0, produto.quantidade + delta);
             produto.status = produto.quantidade <= 5 ? 'Alerta de Reposição' : 'Disponível';
@@ -954,26 +599,27 @@
         function deleteProduct(id) {
             if (!confirm('Remover este produto do estoque?')) return;
             let estoque = JSON.parse(localStorage.getItem('esteticaPro_estoque') || '[]');
-            estoque = estoque.filter(p => p.id !== id);
+            estoque = estoque.filter(function(p) { return p.id !== id; });
             localStorage.setItem('esteticaPro_estoque', JSON.stringify(estoque));
             renderEstoque();
             showToast('Produto removido');
         }
 
-        function showToast(msg, type = 'success') {
+        function showToast(msg, type) {
+            type = type || 'success';
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
             if (!toast || !toastMsg) return;
             toastMsg.textContent = msg;
             if (type === 'error') {
-                toast.querySelector('svg').classList.replace('text-emerald-500', 'text-red-500');
+                toast.querySelector('svg').classList.replace('text-emerald-400', 'text-red-400');
                 toast.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
             } else {
-                toast.querySelector('svg').classList.replace('text-red-500', 'text-emerald-500');
+                toast.querySelector('svg').classList.replace('text-red-400', 'text-emerald-400');
                 toast.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>';
             }
             toast.classList.remove('translate-x-full');
-            setTimeout(() => toast.classList.add('translate-x-full'), 3000);
+            setTimeout(function() { toast.classList.add('translate-x-full'); }, 3000);
         }
     </script>
 </body>
